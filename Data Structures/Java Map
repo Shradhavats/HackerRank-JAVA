@@ -1,0 +1,32 @@
+import java.util.*;
+import java.io.*;
+
+class Solution{
+	public static void main(String []argh)
+	{
+		Scanner sc = new Scanner(System.in);
+        Map<String, Integer> phonebook= new HashMap<>();
+		int n=sc.nextInt();
+		sc.nextLine();
+		for(int i=0;i<n;i++)
+		{
+			String name=sc.nextLine();
+			int phone=sc.nextInt();
+            phonebook.put(name,phone);
+			sc.nextLine();
+		}
+		while(sc.hasNext())
+		{
+			String query=sc.nextLine();
+            if(phonebook.containsKey(query)){
+                System.out.println(query+"="+phonebook.get(query));
+            }
+            else{
+                System.out.println("Not found");
+            }
+		}
+	}
+}
+
+
+
